@@ -1,3 +1,4 @@
+<?php
 namespace App\Http\Controllers;
 
 class ListarFilmes{
@@ -7,8 +8,8 @@ class ListarFilmes{
         $filmes = ['A Vida é Bela','A Lista de Schindler','The Shosen'];
 
         $html = '<ul>';
-        foreach($filme as $filmes){
-            $html.= "<li>$filme<li>";
+        foreach($filmes as $filme){
+            $html.= "<li>$filme</li>";
         }
         $html.='</lu>';
 
@@ -18,3 +19,5 @@ class ListarFilmes{
 
 
 }
+
+?>
