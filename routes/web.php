@@ -18,4 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/olaMundo', [ListarFilmes::class,'listaFilmes']);
+Route::get('/olaMundo', [ListarFilmes::class,'index']);

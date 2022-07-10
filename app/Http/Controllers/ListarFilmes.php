@@ -1,10 +1,12 @@
 <?php
+
 namespace App\Http\Controllers;
 
-class ListarFilmes{
+use Illuminate\Http\Request;
 
-
-    public function listaFilmes(){
+class ListarFilmes extends Controller
+{
+    public function index(Request $requestgit){
         $filmes = ['A Vida é Bela','A Lista de Schindler','The Shosen'];
 
         $html = '<ul>';
@@ -13,11 +15,6 @@ class ListarFilmes{
         }
         $html.='</lu>';
 
-        echo $html;
+        return $html;
     }
-
-
-
 }
-
-?>
