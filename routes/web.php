@@ -17,6 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/olaMundo', function(){
-    echo 'Olá Mundo';
-});
+Route::get('/olaMundo', [ListarFilmes,listaFilmes()]);
