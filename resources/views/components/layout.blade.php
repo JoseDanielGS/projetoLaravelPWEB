@@ -3,7 +3,8 @@
 
  <head>
     <title>{{$title}} - Controle de filmes</title>
- </head>
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+</head>
 
  <body> 
 
