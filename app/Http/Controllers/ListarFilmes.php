@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class ListarFilmes extends Controller
 {   // há um padrão em ... que indica os nomes dos métodos 
-    public function index(Request $requestgit){
-        $filmes = ['A Vida é Bela','A Lista de Schindler','The Shosen'];
+    public function index(){
+        $filmes = DB::select('select nome from movies;');
 
         //$html = '<ul>';
         //foreach($filmes as $filme){
@@ -22,5 +23,16 @@ class ListarFilmes extends Controller
     public function create(){
         
         return view('filmes.create');
+    }
+
+    public function store(Request $requestgit){
+        
+        $nomeSerie = $requestgit->input('nome');
+        if(DB::insert('insert into movies (nome) values (?);', [$nomeSerie])){
+            return 'OK';
+        }else{
+            return 'error';
+        }
+
     }
 }
