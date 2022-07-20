@@ -9,7 +9,7 @@ use App\Models\Movie;
 class ListarFilmes extends Controller
 {   // há um padrão em ... que indica os nomes dos métodos 
     public function index(){
-        $filmes = Movie::all();
+        $filmes = Movie::query()->orderBy('name')->get();
         //dd($filmes);
 
         //$html = '<ul>';
