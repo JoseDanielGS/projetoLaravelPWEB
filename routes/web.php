@@ -20,4 +20,4 @@ Route::get('/', function () {
 
 Route::get('/filmes', [ListarFilmes::class,'index']);
 Route::get('/filmes/adicionar', [ListarFilmes::class,'create']);
-Route::get('/filmes/salvar', [ListarFilmes::class,'store']);
+Route::post('/filmes/salvar', [ListarFilmes::class,'store']);
