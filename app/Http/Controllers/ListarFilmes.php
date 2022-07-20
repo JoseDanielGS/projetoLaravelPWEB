@@ -16,6 +16,11 @@ class ListarFilmes extends Controller
         //$html.='</lu>';
         
         //o Laravel transforma a String de retorno na resposta do request, se for algum objeto, transforma em JSON
-        return view('filmes.listar-filmes')->with('filmes',$filmes);
+        return view('filmes.index')->with('filmes',$filmes);
+    }
+
+    public function create(){
+        
+        return view('filmes.create');
     }
 }

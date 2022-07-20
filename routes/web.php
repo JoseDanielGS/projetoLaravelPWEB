@@ -18,4 +18,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/olaMundo', [ListarFilmes::class,'index']);
+Route::get('/filmes', [ListarFilmes::class,'index']);
+Route::get('/filmes/adicionar', [ListarFilmes::class,'create']);
