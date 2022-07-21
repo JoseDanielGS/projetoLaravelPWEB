@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 use App\Models\Movie;
 
-class ListarFilmes extends Controller
+class MoviesController extends Controller
 {   // há um padrão em ... que indica os nomes dos métodos 
     public function index(){
         $filmes = Movie::query()->orderBy('name')->get();
