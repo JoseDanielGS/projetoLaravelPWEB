@@ -15,12 +15,16 @@ use App\Http\Controllers\ListarFilmes;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/movies');
 });
 
+Route::resource('/movies', MoviesController::class);
+
+/*
 Route::get('/filmes', [ListarFilmes::class,'index']);
 Route::get('/filmes/adicionar', [ListarFilmes::class,'create']);
 Route::post('/filmes/salvar', [ListarFilmes::class,'store']);
 Route::get('/filmes/edit', [ListarFilmes::class,'update']);
 Route::post('/filmes/update', [ListarFilmes::class,'edit']);
 Route::get('/filmes/destroy', [ListarFilmes::class,'destroy']);
+*/

@@ -1,5 +1,5 @@
 <x-layout title="filmes">
-<form action="/filmes/salvar" method="post">
+<form action="{{ route('movies.store') }}" method="post">
     @csrf
         <div class="mb-3">
             <label for="nome" class="form-label">Nome:</label>

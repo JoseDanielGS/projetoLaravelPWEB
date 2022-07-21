@@ -27,20 +27,19 @@ class ListarFilmes extends Controller
         return view('filmes.create');
     }
 
-    public function store(Request $requestgit){
+    public function store(Request $request){
         
+        Movie::create($request->all());
+
+        return to_route('movies.index');
+        
+        /*
         $nomeSerie = $requestgit->input('nome');
         $filmes = new Movie();
         $filmes->name = $nomeSerie;
         $filmes->save();
         return redirect("/filmes");
-        
-        /*
-        if(DB::insert('insert into movies (nome) values (?);', [$nomeSerie])){
-            return 'OK';
-        }else{
-            return 'error';
-        }*/
+        */
 
     }
 
