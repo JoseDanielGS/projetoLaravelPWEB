@@ -43,4 +43,41 @@ class ListarFilmes extends Controller
         }*/
 
     }
+
+    public function update(Request $requestgit){
+        return view('filmes.edit')->with('filme',Movie::find($requestgit->get('id')));
+    }
+
+    public function edit(Request $requestgit){
+        
+        $filmes = Movie::find($requestgit->get('id'));
+       // $filme = Movie::find($requestgit->get('id'));
+        $filmes->name = $requestgit->input('NovoNome');
+        $filmes->save();
+        return redirect("/filmes");
+        
+        /*
+        if(DB::insert('insert into movies (nome) values (?);', [$nomeSerie])){
+            return 'OK';
+        }else{
+            return 'error';
+        }*/
+
+    }
+
+    public function destroy(Request $requestgit){
+        
+        $filmes = Movie::find($requestgit->get('id'));
+       // $filme = Movie::find($requestgit->get('id'));
+        $filmes->delete();
+        return redirect("/filmes");
+        
+        /*
+        if(DB::insert('insert into movies (nome) values (?);', [$nomeSerie])){
+            return 'OK';
+        }else{
+            return 'error';
+        }*/
+
+    }
 }
