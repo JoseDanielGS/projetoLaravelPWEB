@@ -30,7 +30,6 @@ class MoviesController extends Controller
     public function store(Request $request){
         
         Movie::create($request->all());
-
         return to_route('movies.index');
         
         /*
@@ -43,17 +42,8 @@ class MoviesController extends Controller
 
     }
 
-    public function update(Request $requestgit){
-        return view('filmes.edit')->with('filme',Movie::find($requestgit->get('id')));
-    }
-
     public function edit(Request $requestgit){
-        
-        $filmes = Movie::find($requestgit->get('id'));
-       // $filme = Movie::find($requestgit->get('id'));
-        $filmes->name = $requestgit->input('NovoNome');
-        $filmes->save();
-        return redirect("/filmes");
+        return view('filmes.edit')->with('movie',Movie::find($requestgit->movie));
         
         /*
         if(DB::insert('insert into movies (nome) values (?);', [$nomeSerie])){
@@ -64,12 +54,24 @@ class MoviesController extends Controller
 
     }
 
-    public function destroy(Request $requestgit){
+    public function update(Request $requestgit){
+        $filmes = Movie::find($requestgit->movie);
+        // $filme = Movie::find($requestgit->get('id'));
+         $filmes->name = $requestgit->input('NovoNome');
+         $filmes->save();
+         return to_route('movies.index');
+    }
+
+    public function destroy(Request $request){
         
-        $filmes = Movie::find($requestgit->get('id'));
+        Movie::destroy($request->movie);
+        return to_route('movies.index');
+
+
+       // $filmes = Movie::find($requestgit->get('id'));
        // $filme = Movie::find($requestgit->get('id'));
-        $filmes->delete();
-        return redirect("/filmes");
+       // $filmes->delete();
+       //return redirect("/filmes");
         
         /*
         if(DB::insert('insert into movies (nome) values (?);', [$nomeSerie])){

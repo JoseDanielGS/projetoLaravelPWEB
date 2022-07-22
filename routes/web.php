@@ -18,7 +18,7 @@ Route::get('/', function () {
     return redirect('/movies');
 });
 
-Route::resource('/movies', MoviesController::class);
+Route::resource('/movies', MoviesController::class)->except(['show']);
 
 /*
 Route::get('/filmes', [ListarFilmes::class,'index']);
