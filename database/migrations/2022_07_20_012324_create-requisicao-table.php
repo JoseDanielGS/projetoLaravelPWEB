@@ -13,9 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('movies', function (Blueprint $table) {
+        Schema::create('requisicoes', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('fornecedor');
+            $table->string('material');
+            $table->boolean('validacaoAlmoxarifado');
+            $table->boolean('validacaoDemandante');
+            $table->string('tipoMaterial');
+            $table->boolean('pago');
+            $table->string('status');
             $table->timestamps();
         });
     }
