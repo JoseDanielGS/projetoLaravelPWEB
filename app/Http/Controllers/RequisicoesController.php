@@ -9,22 +9,22 @@ use App\Models\Requisicao;
 class RequisicoesController extends Controller
 {   // há um padrão em ... que indica os nomes dos métodos 
     public function index(){
-        $filmes = Requisicao::query()->orderBy('name')->get();
-        //dd($filmes);
+        $requisicoes = Requisicao::query()->orderBy('material')->get();
+        //dd($requisicoes);
 
         //$html = '<ul>';
-        //foreach($filmes as $filme){
+        //foreach($requisicoes as $filme){
         //    $html.= "<li>$filme</li>";
         //}
         //$html.='</lu>';
         
         //o Laravel transforma a String de retorno na resposta do request, se for algum objeto, transforma em JSON
-        return view('filmes.index')->with('filmes',$filmes);
+        return view('requisicoes.index')->with('requisicoes',$requisicoes);
     }
 
     public function create(){
         
-        return view('filmes.create');
+        return view('requisicoes.create');
     }
 
     public function store(Request $request){
@@ -34,16 +34,16 @@ class RequisicoesController extends Controller
         
         /*
         $nomeSerie = $requestgit->input('nome');
-        $filmes = new Requisicao();
-        $filmes->name = $nomeSerie;
-        $filmes->save();
-        return redirect("/filmes");
+        $requisicoes = new Requisicao();
+        $requisicoes->name = $nomeSerie;
+        $requisicoes->save();
+        return redirect("/requisicoes");
         */
 
     }
 
     public function edit(Request $requestgit){
-        return view('filmes.edit')->with('movie',Requisicao::find($requestgit->movie));
+        return view('requisicoes.edit')->with('movie',Requisicao::find($requestgit->movie));
         
         /*
         if(DB::insert('insert into requisicoes (nome) values (?);', [$nomeSerie])){
@@ -55,10 +55,10 @@ class RequisicoesController extends Controller
     }
 
     public function update(Request $requestgit){
-        $filmes = Requisicao::find($requestgit->movie);
+        $requisicoes = Requisicao::find($requestgit->movie);
         // $filme = Requisicao::find($requestgit->get('id'));
-         $filmes->name = $requestgit->input('NovoNome');
-         $filmes->save();
+         $requisicoes->name = $requestgit->input('NovoNome');
+         $requisicoes->save();
          return to_route('requisicoes.index');
     }
 
@@ -68,10 +68,10 @@ class RequisicoesController extends Controller
         return to_route('requisicoes.index');
 
 
-       // $filmes = Requisicao::find($requestgit->get('id'));
+       // $requisicoes = Requisicao::find($requestgit->get('id'));
        // $filme = Requisicao::find($requestgit->get('id'));
-       // $filmes->delete();
-       //return redirect("/filmes");
+       // $requisicoes->delete();
+       //return redirect("/requisicoes");
         
         /*
         if(DB::insert('insert into requisicoes (nome) values (?);', [$nomeSerie])){
