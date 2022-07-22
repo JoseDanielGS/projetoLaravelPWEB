@@ -29,6 +29,8 @@ class RequisicoesController extends Controller
 
     public function store(Request $request){
         
+        //dd($request->all());
+        //$request->all()->status = "conluido";
         Requisicao::create($request->all());
         return to_route('requisicoes.index');
         

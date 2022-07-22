@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('fornecedor');
             $table->string('material');
-            $table->boolean('validacaoAlmoxarifado');
-            $table->boolean('validacaoDemandante');
+            $table->string('validacaoAlmoxarifado');
+            $table->string('validacaoDemandante');
             $table->string('tipoMaterial');
-            $table->boolean('pago');
+            $table->string('pago');
             $table->string('status');
             $table->timestamps();
         });

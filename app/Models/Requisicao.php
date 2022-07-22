@@ -9,5 +9,6 @@ class Requisicao extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nome'];
+    protected $fillable = ['fornecedor','material','validacaoAlmoxarifado','validacaoDemandante','tipoMaterial','pago','status'];
+    protected $table = 'requisicoes';
 }

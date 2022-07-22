@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MoviesController;
+use App\Http\Controllers\RequisicoesController;
 
 /*
 |--------------------------------------------------------------------------
