@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
-use App\Models\Movie;
+use App\Models\Requisicao;
 
-class MoviesController extends Controller
+class RequisicoesController extends Controller
 {   // há um padrão em ... que indica os nomes dos métodos 
     public function index(){
-        $filmes = Movie::query()->orderBy('name')->get();
+        $filmes = Requisicao::query()->orderBy('name')->get();
         //dd($filmes);
 
         //$html = '<ul>';
@@ -29,12 +29,12 @@ class MoviesController extends Controller
 
     public function store(Request $request){
         
-        Movie::create($request->all());
-        return to_route('movies.index');
+        Requisicao::create($request->all());
+        return to_route('requisicoes.index');
         
         /*
         $nomeSerie = $requestgit->input('nome');
-        $filmes = new Movie();
+        $filmes = new Requisicao();
         $filmes->name = $nomeSerie;
         $filmes->save();
         return redirect("/filmes");
@@ -43,10 +43,10 @@ class MoviesController extends Controller
     }
 
     public function edit(Request $requestgit){
-        return view('filmes.edit')->with('movie',Movie::find($requestgit->movie));
+        return view('filmes.edit')->with('movie',Requisicao::find($requestgit->movie));
         
         /*
-        if(DB::insert('insert into movies (nome) values (?);', [$nomeSerie])){
+        if(DB::insert('insert into requisicoes (nome) values (?);', [$nomeSerie])){
             return 'OK';
         }else{
             return 'error';
@@ -55,26 +55,26 @@ class MoviesController extends Controller
     }
 
     public function update(Request $requestgit){
-        $filmes = Movie::find($requestgit->movie);
-        // $filme = Movie::find($requestgit->get('id'));
+        $filmes = Requisicao::find($requestgit->movie);
+        // $filme = Requisicao::find($requestgit->get('id'));
          $filmes->name = $requestgit->input('NovoNome');
          $filmes->save();
-         return to_route('movies.index');
+         return to_route('requisicoes.index');
     }
 
     public function destroy(Request $request){
         
-        Movie::destroy($request->movie);
-        return to_route('movies.index');
+        Requisicao::destroy($request->movie);
+        return to_route('requisicoes.index');
 
 
-       // $filmes = Movie::find($requestgit->get('id'));
-       // $filme = Movie::find($requestgit->get('id'));
+       // $filmes = Requisicao::find($requestgit->get('id'));
+       // $filme = Requisicao::find($requestgit->get('id'));
        // $filmes->delete();
        //return redirect("/filmes");
         
         /*
-        if(DB::insert('insert into movies (nome) values (?);', [$nomeSerie])){
+        if(DB::insert('insert into requisicoes (nome) values (?);', [$nomeSerie])){
             return 'OK';
         }else{
             return 'error';

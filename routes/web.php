@@ -15,10 +15,10 @@ use App\Http\Controllers\MoviesController;
 */
 
 Route::get('/', function () {
-    return redirect('/movies');
+    return redirect('/requisicoes');
 });
 
-Route::resource('/movies', MoviesController::class)->except(['show']);
+Route::resource('/requisicoes', RequisicoesController::class)->except(['show']);
 
 /*
 Route::get('/filmes', [ListarFilmes::class,'index']);
