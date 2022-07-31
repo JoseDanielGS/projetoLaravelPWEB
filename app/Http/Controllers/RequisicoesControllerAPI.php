@@ -15,8 +15,20 @@ class RequisicoesControllerAPI extends Controller
         return response()->json(Requisicao::create($request->all()), 201);
     }
 
-    public function update(Request $request){
-        $requisicao = Requisicao::find($request->all());
+    public function update(int $id, Request $request){
+        //dd($request);
+        //return $req->fill($request->all())->save();
+        $requisicao = Requisicao::find($id);
+        //dd($requisicao);
+        $requisicao->material = $request->material;
+        $requisicao->fornecedor = $request->fornecedor;
+        $requisicao->validacaoAlmoxarifado = $request->validacaoAlmoxarifado;
+        $requisicao->validacaoDemandante = $request->validacaoDemandante;
+        $requisicao->tipoMaterial = $request->tipoMaterial;
+        $requisicao->pago = $request->pago;
+        $requisicao->status = $request->status;
+
+        //dd($requisicao);
         $requisicao->save();
         return $requisicao;
     }
