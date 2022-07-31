@@ -13,6 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('requisicoes');
         Schema::create('requisicoes', function (Blueprint $table) {
             $table->id();
             $table->string('fornecedor');
