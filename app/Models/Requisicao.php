@@ -11,4 +11,16 @@ class Requisicao extends Model
 
     protected $fillable = ['fornecedor','material','validacaoAlmoxarifado','validacaoDemandante','tipoMaterial','pago','status'];
     protected $table = 'requisicoes';
+
+    public function materiais(){
+
+        return $this->belongsToMany(Material::class);
+
+    }
+
+    public function fornecedores(){
+
+        return $this->hasOne(Fornecedor::class);
+
+    }
 }

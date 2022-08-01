@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Material extends Model
 {
     use HasFactory;
+
+    public function requisicoes(){
+
+        return $this->belongsToMany(Requisicao::class);
+
+    }
+
 }
