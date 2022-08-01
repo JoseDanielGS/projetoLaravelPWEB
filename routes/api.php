@@ -4,6 +4,8 @@ use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RequisicoesControllerAPI;
+use App\Http\Controllers\MateriaisControllerAPI;
+use App\Http\Controllers\FornecedoresControllerAPI;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +29,5 @@ Route::middleware('auth:sanctum')->get('/currentUser', function (Request $reques
 });
 
 Route::apiResource('/requisicoes', RequisicoesControllerAPI::class);
+Route::apiResource('/materiais', MaterialControllerAPI::class);
+Route::apiResource('/fornecedores', FornecedoresControllerAPI::class);
