@@ -15,4 +15,10 @@ class Fornecedor extends Model
 
     }
 
+    public function materias(){
+
+        return $this->belongsToMany(Material::class);
+
+    }
+
 }

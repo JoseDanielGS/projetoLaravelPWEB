@@ -15,4 +15,10 @@ class Material extends Model
 
     }
 
+    public function fornecedores(){
+
+        return $this->belongsToMany(Fornecedor::class);
+
+    }
+
 }
