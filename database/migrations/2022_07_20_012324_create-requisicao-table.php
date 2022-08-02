@@ -16,11 +16,11 @@ return new class extends Migration
         Schema::dropIfExists('requisicoes');
         Schema::create('requisicoes', function (Blueprint $table) {
             $table->id();
-            //$table->string('fornecedor');
-            //$table->string('material');
+            $table->string('fornecedor');
+            $table->string('material');
             $table->string('validacaoAlmoxarifado');
             $table->string('validacaoDemandante');
-            //$table->string('tipoMaterial');
+            $table->string('tipoMaterial');
             $table->string('pago');
             $table->string('status');
             $table->timestamps();

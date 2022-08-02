@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('materials', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
+            //$table->foreignId("requisicao_id")->constrained();
             $table->timestamps();
         });
     }

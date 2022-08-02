@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('CNPJ');
             $table->string('nomeFantasia');
+            //$table->foreignId("requisicao_id")->constrained();
             $table->timestamps();
         });
     }
