@@ -29,5 +29,5 @@ Route::middleware('auth:sanctum')->get('/currentUser', function (Request $reques
 });
 
 Route::apiResource('/requisicoes', RequisicoesControllerAPI::class);
-Route::apiResource('/materiais', MaterialControllerAPI::class);
+Route::apiResource('/materiais', MateriaisControllerAPI::class);
 Route::apiResource('/fornecedores', FornecedoresControllerAPI::class);

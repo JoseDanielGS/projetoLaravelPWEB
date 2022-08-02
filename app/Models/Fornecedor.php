@@ -9,6 +9,11 @@ class Fornecedor extends Model
 {
     use HasFactory;
 
+    
+    protected $fillable = ['CNPJ','nomeFantasia'];
+    protected $table = 'fornecedores';
+
+
     public function requisicoes(){
 
         return $this->hasMany(Requisicao::class);

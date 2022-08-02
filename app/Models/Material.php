@@ -9,6 +9,9 @@ class Material extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['nome'];
+    protected $table = 'materiais';
+
     public function requisicoes(){
 
         return $this->belongsToMany(Requisicao::class);

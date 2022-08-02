@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Fornecedor;
 
-class RequisicoesControllerAPI extends Controller
+class FornecedoresControllerAPI extends Controller
 {
     public function index(){
         return Fornecedor::all();

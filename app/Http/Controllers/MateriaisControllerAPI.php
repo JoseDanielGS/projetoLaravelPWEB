@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Material;
 
-class RequisicoesControllerAPI extends Controller
+class MateriaisControllerAPI extends Controller
 {
     public function index(){
         return Material::all();
     }
 
     public function store(Request $request){
+        dd($request->all());
         return response()->json(Material::create($request->all()), 201);
     }
 
