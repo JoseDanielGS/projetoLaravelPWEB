@@ -12,7 +12,6 @@ class MateriaisControllerAPI extends Controller
     }
 
     public function store(Request $request){
-        dd($request->all());
         return response()->json(Material::create($request->all()), 201);
     }
 
